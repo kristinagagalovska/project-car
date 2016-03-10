@@ -16,13 +16,15 @@ Route::get('/', function () {
 });
 
 Route::get('owners/index','OwnerController@index');
-Route::get('/add','OwnerController@create');
-Route::post('/add','OwnerController@store');
-Route::get('/edit/{id}','OwnerController@edit');
-Route::post('/edit/{id}','OwnerController@update');
-Route::get('/delete/{id}','OwnerController@delete');
+Route::get('owners/add','OwnerController@create');
+Route::post('owners/add','OwnerController@store');
+Route::get('owners/edit/{id}','OwnerController@edit');
+Route::post('owners/edit/{id}','OwnerController@update');
+Route::get('owners/delete/{id}','OwnerController@delete');
 
 Route::get('cars/index','CarController@index');
+Route::get('cars/add','CarController@create');
+Route::post('cars/add','CarController@store');
 
 /*
 |--------------------------------------------------------------------------

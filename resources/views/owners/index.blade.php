@@ -5,11 +5,11 @@
             <td><p>{{$owner->firstname}}</p></td>
             <td><p>{{$owner->lastname}}</p></td>
             <td><p>{{$owner->birth}}</p></td>
-            <td><p><a href="{{url('/edit',$owner->id)}}">Edit Owner</a></p></td>
-            <td><p><a href="{{url('/delete',$owner->id)}}">Delete Owner</a></p></td>
+            <td><p><a href="{{url('owners/edit',$owner->id)}}">Edit Owner</a></p></td>
+            <td><p><a href="{{url('owners/delete',$owner->id)}}">Delete Owner</a></p></td>
         </tr>
     @endforeach
 
 </table>
 
-</br><a href="{{url('/add')}}">Add Owner</a>
+</br><a href="{{url('owners/add')}}">Add Owner</a>

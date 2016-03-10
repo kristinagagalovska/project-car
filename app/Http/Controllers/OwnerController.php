@@ -28,7 +28,7 @@ class OwnerController extends Controller
         $owner->birth = $request->get('birth');
         $owner->save();
 
-        return redirect('/index');
+        return redirect('owners/index');
     }
 
     public function edit($id)
@@ -46,7 +46,7 @@ class OwnerController extends Controller
         $owner->birth=$request->get('birth');
         $owner->save();
 
-        return redirect('/index');
+        return redirect('owners/index');
     }
 
     public function delete(Request $request, $id)
@@ -54,6 +54,6 @@ class OwnerController extends Controller
         $owner = Owner::find($id);
         $owner->delete();
 
-        return redirect('/index');
+        return redirect('owners/index');
     }
 }

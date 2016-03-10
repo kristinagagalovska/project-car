@@ -5,6 +5,7 @@ use Cron\Tests\DayOfWeekFieldTest;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Owner;
+use Illuminate\Support\Facades\Redirect;
 use Psy\Exception\RuntimeException;
 use App\Car;
 
@@ -63,5 +64,24 @@ class OwnerController extends Controller
         $cars = Car::where('owner_id',$id)->get();
 
         return view('owners/view')->with('cars',$cars);
+    }
+
+    public function createCar(Request $request, $id)
+    {
+        $ownerid = $id;
+        return view('owners/car')->with('ownerid',$ownerid);
+    }
+
+    public function storeCar(Request $request, $id)
+    {
+        $car = new Car();
+        $car->model = $request->get('model');
+        $car->mark = $request->get('mark');
+        $car->manufacture = $request->get('manufacture');
+        $car->num = $request->get('num');
+        $car->owner_id = $id;
+        $car->save();
+
+        return redirect('owners/index');
     }
 }

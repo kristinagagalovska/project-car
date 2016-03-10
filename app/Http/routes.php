@@ -22,6 +22,8 @@ Route::get('owners/edit/{id}','OwnerController@edit');
 Route::post('owners/edit/{id}','OwnerController@update');
 Route::get('owners/delete/{id}','OwnerController@delete');
 Route::get('owners/view/{id}','OwnerController@view');
+Route::get('owners/car/{id}','OwnerController@createCar');
+Route::post('owners/car/{id}','OwnerController@storeCar');
 
 Route::get('cars/index','CarController@index');
 Route::get('cars/add','CarController@create');

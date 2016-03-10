@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Owner;
 use Psy\Exception\RuntimeException;
+use App\Car;
 
 class OwnerController extends Controller
 {
@@ -55,5 +56,12 @@ class OwnerController extends Controller
         $owner->delete();
 
         return redirect('owners/index');
+    }
+
+    public function view(Request $request, $id)
+    {
+        $cars = Car::where('owner_id',$id)->get();
+
+        return view('owners/view')->with('cars',$cars);
     }
 }

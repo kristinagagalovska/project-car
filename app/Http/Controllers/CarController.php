@@ -64,4 +64,12 @@ class CarController extends Controller
 
         return redirect('cars/index');
     }
+
+    public function delete(Request $request, $id)
+    {
+        $car = Car::find($id);
+        $car->delete();
+
+        return redirect('cars/index');
+    }
 }

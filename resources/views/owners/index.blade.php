@@ -7,6 +7,7 @@
             <td><p>{{$owner->birth}}</p></td>
             <td><p><a href="{{url('owners/edit',$owner->id)}}">Edit Owner</a></p></td>
             <td><p><a href="{{url('owners/delete',$owner->id)}}">Delete Owner</a></p></td>
+            <td><p><a href="{{url('owners/view',$owner->id)}}">Show Car</a></p></td>
         </tr>
     @endforeach
 

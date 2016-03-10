@@ -21,12 +21,14 @@ Route::post('owners/add','OwnerController@store');
 Route::get('owners/edit/{id}','OwnerController@edit');
 Route::post('owners/edit/{id}','OwnerController@update');
 Route::get('owners/delete/{id}','OwnerController@delete');
+Route::get('owners/view/{id}','OwnerController@view');
 
 Route::get('cars/index','CarController@index');
 Route::get('cars/add','CarController@create');
 Route::post('cars/add','CarController@store');
 Route::get('cars/edit/{id}','CarController@edit');
 Route::post('cars/edit/{id}','CarController@update');
+Route::get('cars/delete/{id}','CarController@delete');
 
 /*
 |--------------------------------------------------------------------------

@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index','OwnerController@index');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -25,7 +28,8 @@ Route::get('/', function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
+/*
 Route::group(['middleware' => ['web']], function () {
     //
 });
+*/

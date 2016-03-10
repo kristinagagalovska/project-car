@@ -15,21 +15,39 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//show all owners
 Route::get('owners/index','OwnerController@index');
+
+//add new owners
 Route::get('owners/add','OwnerController@create');
 Route::post('owners/add','OwnerController@store');
+
+//edit owner
 Route::get('owners/edit/{id}','OwnerController@edit');
 Route::post('owners/edit/{id}','OwnerController@update');
+
+//delete owner
 Route::get('owners/delete/{id}','OwnerController@delete');
+
+//view all car of the owner
 Route::get('owners/view/{id}','OwnerController@view');
+
+//owner add a new car
 Route::get('owners/car/{id}','OwnerController@createCar');
 Route::post('owners/car/{id}','OwnerController@storeCar');
 
+//show all cars
 Route::get('cars/index','CarController@index');
+
+//add new car
 Route::get('cars/add','CarController@create');
 Route::post('cars/add','CarController@store');
+
+//edit car
 Route::get('cars/edit/{id}','CarController@edit');
 Route::post('cars/edit/{id}','CarController@update');
+
+//delete car
 Route::get('cars/delete/{id}','CarController@delete');
 
 /*

@@ -25,6 +25,8 @@ Route::get('owners/delete/{id}','OwnerController@delete');
 Route::get('cars/index','CarController@index');
 Route::get('cars/add','CarController@create');
 Route::post('cars/add','CarController@store');
+Route::get('cars/edit/{id}','CarController@edit');
+Route::post('cars/edit/{id}','CarController@update');
 
 /*
 |--------------------------------------------------------------------------

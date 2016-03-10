@@ -3,7 +3,7 @@
     <input name="model" placeholder="Enter a model" type="text"/>
     <input name="mark" placeholder="Enter a mark" type="text"/>
     <input name="manufacture" placeholder="Enter a manufacture" type="text"/>
-    <input name="num" placeholder="Enter a num of registration" type="text"/>
+    <input name="num" placeholder="Enter a registration number" type="text"/>
     <select name="owner">
         <option selected disabled name>Select owner</option>
         @foreach($owners as $owner)

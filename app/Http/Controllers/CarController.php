@@ -11,8 +11,9 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
+        $owners = Owner::all();
 
-        return view('cars.index')->with('cars',$cars);
+        return view('cars.index')->with('cars',$cars)->with('owners',$owners);
     }
 
     public function create(Request $request)
@@ -29,6 +30,31 @@ class CarController extends Controller
         $car->mark = $request->get('mark');
         $car->manufacture = $request->get('manufacture');
         $car->num = $request->get('num');
+        if ($request->get('owner') == "") {
+            $car->owner_id=null;
+        } else {
+            $car->owner_id=$request->get('owner');
+        }
+        $car->save();
+
+        return redirect('cars/index');
+    }
+
+    public function edit($id)
+    {
+        $car = Car::find($id);
+        $owners = Owner::all();
+
+        return view('cars.edit')->with('car',$car)->with('owners',$owners);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $car = Car::find($id);
+        $car->model=$request->get('model');
+        $car->mark=$request->get('mark');
+        $car->manufacture=$request->get('manufacture');
+        $car->num=$request->get('num');
         if ($request->get('owner') == "") {
             $car->owner_id=null;
         } else {

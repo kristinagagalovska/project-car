@@ -20,6 +20,7 @@ Route::get('/add','OwnerController@create');
 Route::post('/add','OwnerController@store');
 Route::get('/edit/{id}','OwnerController@edit');
 Route::post('/edit/{id}','OwnerController@update');
+Route::get('/delete/{id}','OwnerController@delete');
 
 /*
 |--------------------------------------------------------------------------

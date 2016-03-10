@@ -5,6 +5,7 @@ use Cron\Tests\DayOfWeekFieldTest;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Owner;
+use Psy\Exception\RuntimeException;
 
 class OwnerController extends Controller
 {
@@ -44,6 +45,14 @@ class OwnerController extends Controller
         $owner->lastname=$request->get('lastname');
         $owner->birth=$request->get('birth');
         $owner->save();
+
+        return redirect('/index');
+    }
+
+    public function delete(Request $request,$id)
+    {
+        $owner=Owner::find($id);
+        $owner->delete();
 
         return redirect('/index');
     }

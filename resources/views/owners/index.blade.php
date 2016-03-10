@@ -6,6 +6,7 @@
             <td><p>{{$owner->lastname}}</p></td>
             <td><p>{{$owner->birth}}</p></td>
             <td><p><a href="{{url('/edit',$owner->id)}}">Edit Owner</a></p></td>
+            <td><p><a href="{{url('/delete',$owner->id)}}">Delete Owner</a></p></td>
         </tr>
     @endforeach
 

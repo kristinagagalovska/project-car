@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <a href="{{ url('owners/index') }}">Owners</a>
+                <a href="{{ url('cars/index') }}">Cars</a>
             </div>
         </div>
     </body>

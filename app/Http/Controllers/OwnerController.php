@@ -33,14 +33,14 @@ class OwnerController extends Controller
 
     public function edit($id)
     {
-        $owner=Owner::find($id);
+        $owner = Owner::find($id);
 
         return view('owners.edit')->with('owner',$owner);
     }
 
     public function update(Request $request, $id)
     {
-        $owner=Owner::find($id);
+        $owner = Owner::find($id);
         $owner->firstname=$request->get('firstname');
         $owner->lastname=$request->get('lastname');
         $owner->birth=$request->get('birth');
@@ -51,7 +51,7 @@ class OwnerController extends Controller
 
     public function delete(Request $request, $id)
     {
-        $owner=Owner::find($id);
+        $owner = Owner::find($id);
         $owner->delete();
 
         return redirect('/index');

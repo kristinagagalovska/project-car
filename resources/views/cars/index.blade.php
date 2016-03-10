@@ -10,3 +10,5 @@
         </tr>
     @endforeach
 </table>
+
+</br><a href="{{url('cars/add')}}">Add Car</a>

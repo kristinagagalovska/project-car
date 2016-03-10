@@ -38,7 +38,7 @@ class OwnerController extends Controller
         return view('owners.edit')->with('owner',$owner);
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $owner=Owner::find($id);
         $owner->firstname=$request->get('firstname');
@@ -49,7 +49,7 @@ class OwnerController extends Controller
         return redirect('/index');
     }
 
-    public function delete(Request $request,$id)
+    public function delete(Request $request, $id)
     {
         $owner=Owner::find($id);
         $owner->delete();

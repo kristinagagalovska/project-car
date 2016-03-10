@@ -1,11 +1,11 @@
 <h4>The List Of The Owners:</h4>
-<ul>
+<table>
     @foreach($owners as $owner)
-        <li>
-            <p>{{$owner->firstname}}</p>
-            <p>{{$owner->lastname}}</p>
-            <p>{{$owner->birth}}</p>
-        </li>
+
+        <td><p>{{$owner->firstname}}</p></td>
+        <td><p>{{$owner->lastname}}</p></td>
+        <td><p>{{$owner->birth}}</p></td>
     @endforeach
-</ul>
-<a href="{{url('/new')}}">Add Owner</a>
+</table>
+
+</br><a href="{{url('/add')}}">Add Owner</a>

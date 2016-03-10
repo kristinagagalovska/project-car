@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/index','OwnerController@index');
-
+Route::get('/add','OwnerController@create');
+Route::post('/add','OwnerController@store');
 
 /*
 |--------------------------------------------------------------------------

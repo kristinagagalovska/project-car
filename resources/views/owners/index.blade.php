@@ -1,4 +1,4 @@
-<h4>The List Of The Owners:</h4>
+<h4>List Of The Owners:</h4>
 <table>
     @foreach($owners as $owner)
         <tr>

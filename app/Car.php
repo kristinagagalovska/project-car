@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    public function owners()
+    public function owner()
     {
         return $this->belongsTo('App\Owner');
     }

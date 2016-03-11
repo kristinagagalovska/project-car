@@ -11,9 +11,8 @@ class CarController extends Controller
     public function index()
     {
         $cars = Car::all();
-        $owners = Owner::all();
 
-        return view('cars.index')->with('cars', $cars)->with('owners', $owners);
+        return view('cars.index')->with('cars', $cars);
     }
 
     public function create(Request $request)
@@ -37,7 +36,7 @@ class CarController extends Controller
         }
         $car->save();
 
-        return redirect('cars/index');
+        return redirect()->route('cars.index');
     }
 
     public function edit($id)
@@ -62,7 +61,7 @@ class CarController extends Controller
         }
         $car->save();
 
-        return redirect('cars/index');
+        return redirect()->route('cars.index');
     }
 
     public function delete(Request $request, $id)
@@ -70,6 +69,6 @@ class CarController extends Controller
         $car = Car::find($id);
         $car->delete();
 
-        return redirect('cars/index');
+        return redirect()->route('cars.index');
     }
 }

@@ -37,7 +37,7 @@ class OwnerController extends Controller
     {
         $owner = Owner::find($id);
 
-        return view('owners.edit')->with('owner',$owner);
+        return view('owners.edit')->with('owner', $owner);
     }
 
     public function update(Request $request, $id)
@@ -61,15 +61,15 @@ class OwnerController extends Controller
 
     public function view(Request $request, $id)
     {
-        $cars = Car::where('owner_id',$id)->get();
+        $cars = Car::where('owner_id', $id)->get();
 
-        return view('owners/view')->with('cars',$cars);
+        return view('owners/view')->with('cars', $cars);
     }
 
     public function createCar(Request $request, $id)
     {
         $ownerid = $id;
-        return view('owners/car')->with('ownerid',$ownerid);
+        return view('owners/car')->with('ownerid', $ownerid);
     }
 
     public function storeCar(Request $request, $id)

@@ -8,10 +8,10 @@
     </tr>
     @foreach($cars as $car)
         <tr>
-            <td><p>{{$car->model}}</p></td>
-            <td><p>{{$car->mark}}</p></td>
-            <td><p>{{$car->manufacture}}</p></td>
-            <td><p>{{$car->num}}</p></td>
+            <td><p>{{ $car->model }}</p></td>
+            <td><p>{{ $car->mark }}</p></td>
+            <td><p>{{ $car->manufacture }}</p></td>
+            <td><p>{{ $car->num }}</p></td>
         </tr>
     @endforeach
 

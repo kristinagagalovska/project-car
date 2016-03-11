@@ -7,7 +7,7 @@
     <select name="owner">
         <option selected disabled name>Select owner</option>
         @foreach($owners as $owner)
-            <option value="{{ $owner->id }}">{{$owner->firstname}}</option>
+            <option value="{{ $owner->id }}">{{ $owner->firstname }}</option>
         @endforeach
         <option value="">Withoute owner</option>
     </select>

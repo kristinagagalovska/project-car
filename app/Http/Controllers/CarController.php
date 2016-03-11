@@ -13,14 +13,14 @@ class CarController extends Controller
         $cars = Car::all();
         $owners = Owner::all();
 
-        return view('cars.index')->with('cars',$cars)->with('owners',$owners);
+        return view('cars.index')->with('cars', $cars)->with('owners', $owners);
     }
 
     public function create(Request $request)
     {
         $owners = Owner::all();
 
-        return view('cars.add')->with('owners',$owners);
+        return view('cars.add')->with('owners', $owners);
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class CarController extends Controller
         $car = Car::find($id);
         $owners = Owner::all();
 
-        return view('cars.edit')->with('car',$car)->with('owners',$owners);
+        return view('cars.edit')->with('car', $car)->with('owners', $owners);
     }
 
     public function update(Request $request, $id)

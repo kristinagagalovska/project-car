@@ -5,6 +5,8 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Owner;
+use Validator;
+
 
 class CarController extends Controller
 {
@@ -24,6 +26,13 @@ class CarController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'model' => 'required|regex:',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->route('cars.add')
+                             ->withErrors($validator);
+        }
         $car = new Car();
         $car->model = $request->get('model');
         $car->mark = $request->get('mark');

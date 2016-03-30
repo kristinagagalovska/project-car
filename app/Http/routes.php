@@ -70,3 +70,15 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index');
 });
+
+//Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::post('auth/logout', 'Auth\AuthController@postLogout');
+
+
+
+
+
+
+
